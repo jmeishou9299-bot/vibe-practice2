@@ -1,0 +1,208 @@
+/* 기본 초기화 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Pretendard', 'Malgun Gothic', sans-serif;
+    background-color: #faf7f2; /* 따뜻한 한지 느낌의 배경색 */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.dictionary-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    padding: 35px 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(8c, 64, 51, 0.08);
+    border: 1px solid #eae1d4;
+}
+
+/* 헤더 디자인 */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: #2e5a44; /* 단정한 녹색 서체 */
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* 검색창 디자인 */
+.search-section {
+    margin-bottom: 25px;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+#search-input {
+    flex: 1;
+    padding: 14px 20px;
+    font-size: 1rem;
+    border: 2px solid #d1c7bd;
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#search-input:focus {
+    border-color: #2e5a44;
+}
+
+#search-button {
+    background-color: #2e5a44;
+    color: white;
+    border: none;
+    padding: 0 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#search-button:hover {
+    background-color: #1f3e2e;
+}
+
+/* 추천 단어 태그 */
+.recommendations {
+    font-size: 0.85rem;
+    color: #777;
+    padding-left: 5px;
+}
+
+.tag {
+    background-color: #f0eae1;
+    color: #5c4b37;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-left: 4px;
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+.tag:hover {
+    background-color: #2e5a44;
+    color: white;
+}
+
+/* 결과창 카드 디자인 */
+.result-section {
+    margin-top: 25px;
+    animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-card {
+    border: 1px solid #eadecc;
+    border-radius: 16px;
+    background-color: #fdfcf9;
+    overflow: hidden;
+}
+
+.word-header {
+    background-color: #2e5a44;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#res-word {
+    font-size: 2.2rem;
+    font-family: 'Gungsuh', 'Chosunilbo_myungjo', serif; /* 한자는 궁서/명조 계열이 예쁩니다 */
+    letter-spacing: 4px;
+    margin-bottom: 5px;
+}
+
+.reading {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: bold;
+}
+
+/* 정보 상자들 */
+.info-group {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-box {
+    background: #ffffff;
+    border: 1px solid #f0e6da;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.info-box.accent {
+    background-color: #f7f3eb; /* 속뜻을 강조하기 위한 연한 배경 */
+    border-left: 4px solid #c49a6c;
+}
+
+.info-box h3 {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.info-box .icon {
+    margin-right: 6px;
+}
+
+.info-text {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #222;
+    word-break: keep-all;
+}
+
+#res-example {
+    font-style: italic;
+    color: #444;
+}
+
+/* 에러 상자 */
+.error-box {
+    background-color: #fbebeb;
+    color: #b73a3a;
+    border: 1px solid #f5d2d2;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* 클래스 제어 */
+.hidden {
+    display: none !important;
+}

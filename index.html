@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생활 한자어 속뜻 사전</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dictionary-container">
+        <header>
+            <h1>🔍 생활 한자어 속뜻 사전</h1>
+            <p class="subtitle">우리가 일상에서 쓰는 한자어의 진짜 의미를 찾아보세요!</p>
+        </header>
+
+        <section class="search-section">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="한자어를 입력하세요 (예: 학교, 약속, 배려)">
+                <button id="search-button" onclick="searchWord()">찾아보기</button>
+            </div>
+            <div class="recommendations">
+                <span>추천 단어: </span>
+                <span class="tag" onclick="quickSearch('학교')">학교</span>
+                <span class="tag" onclick="quickSearch('약속')">약속</span>
+                <span class="tag" onclick="quickSearch('배려')">배려</span>
+                <span class="tag" onclick="quickSearch('공부')">공부</span>
+                <span class="tag" onclick="quickSearch('반성')">반성</span>
+            </div>
+        </section>
+
+        <section id="result-section" class="result-section hidden">
+            <div class="result-card">
+                <div class="word-header">
+                    <h2 id="res-word">學校</h2>
+                    <span id="res-reading" class="reading">학교</span>
+                </div>
+                
+                <div class="info-group">
+                    <div class="info-box">
+                        <h3><span class="icon">✍️</span> 한자 풀이 (훈음)</h3>
+                        <p id="res-literal" class="info-text">배울 학, 집 교</p>
+                    </div>
+                    
+                    <div class="info-box accent">
+                        <h3><span class="icon">💡</span> 어휘의 속뜻</h3>
+                        <p id="res-meaning" class="info-text">학생들이 모여서 선생님께 공부를 배우는 집</p>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h3><span class="icon">💬</span> 일상 속 활용</h3>
+                        <p id="res-example" class="info-text">"우리는 내일 아침 일찍 학교에 갈 예정이다."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="error-message" class="error-box hidden">
+            아직 사전에 등록되지 않은 단어입니다.<br>정확한 한자어(한글)를 입력했는지 확인해 주세요!
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
